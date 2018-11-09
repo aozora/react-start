@@ -8,7 +8,7 @@ class Search extends Component {
   onSearchSubmit = (event) => {
     event.preventDefault();
 
-    const term = this.term;
+    const term = this.term.value;
     console.log(`term: ${term}`);
 
     // if the term is empty exit and do nothing
@@ -16,7 +16,9 @@ class Search extends Component {
       return;
     }
 
+    // routing...
     console.log('Searching...');
+    this.props.history.push(`/search/${term}`);
   };
 
   render() {
