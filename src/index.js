@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
       'click-events-have-key-events': 'warn',
       'hidden-uses-tabindex': 'warn',
       'img-uses-alt': 'warn',
-      'redundant-alt': ['warn', ['image', 'photo', 'foto', 'bild']],
+      'img-redundant-alt': ['warn', ['image', 'photo', 'foto', 'bild']],
       'label-has-for': 'error',
       'mouse-events-have-key-events': 'warn',
       'no-onchange': 'error',
