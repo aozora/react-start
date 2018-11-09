@@ -25,6 +25,15 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
+/**
+ * Activate PollyJs for dev mocking
+ */
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-unused-vars
+  const polly = require('./mocks');
+  console.log('PollyJs mocks activated!');
+}
+
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

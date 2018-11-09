@@ -23,6 +23,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@pollyjs/adapter-fetch": "^1.2.0",
+    "@pollyjs/adapter-xhr": "^1.2.0",
+    "@pollyjs/core": "^1.2.0",
+    "@pollyjs/persister-local-storage": "^1.2.0",
     "axios": "^0.18.0",
     "node-sass": "^4.10.0",
     "react-a11y": "^1.1.0",
