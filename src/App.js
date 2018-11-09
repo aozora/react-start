@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './sass/app.scss';
 import Home from './components/Home';
+import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Navigation/>
+        <section className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <p>
             React is running!
@@ -18,7 +20,7 @@ class App extends Component {
              rel="noopener noreferrer">
             Learn React
           </a>
-        </header>
+        </section>
         <Home></Home>
       </div>
     );
