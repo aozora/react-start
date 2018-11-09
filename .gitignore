@@ -72,6 +72,15 @@ typings/
 # production
 /build
 
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
 # misc
 .DS_Store
 .env.local
