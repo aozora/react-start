@@ -5,17 +5,28 @@ class Search extends Component {
   /**
    * Search submit event handler
    */
-  onSearchSubmit(event) {
+  onSearchSubmit = (event) => {
     event.preventDefault();
 
+    const term = this.term;
+    console.log(`term: ${term}`);
+
+    // if the term is empty exit and do nothing
+    if (term === ''){
+      return;
+    }
+
     console.log('Searching...');
-  }
+  };
 
   render() {
     return (
       <section className="search">
         <form role="search" onSubmit={this.onSearchSubmit}>
-          <input type="text" required/>
+          <label htmlFor="search__term">Look for</label>
+          <input id="search__term" type="text"
+                 ref={(value) => this.term = value}
+                 required/>
           <button type="submit" className="button">Search</button>
         </form>
       </section>

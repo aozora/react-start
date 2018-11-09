@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search';
 import logo from '../logo.svg';
 
 function Home() {
@@ -8,6 +9,9 @@ function Home() {
       <p>
         React is running!
       </p>
+
+      <Search/>
+
       <a className="App-link"
          href="https://reactjs.org"
          target="_blank"
