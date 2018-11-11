@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'connected-react-router';
 import { search } from '../actions';
 
-const Search = ({dispatch, history}) => {
+const Search = ({dispatch}) => {
   let term;
 
   /**
