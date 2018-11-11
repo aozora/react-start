@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { push } from 'connected-react-router';
 import { search } from '../actions';
 
-const Search = (dispatch) => {
+const Search = ({dispatch, history}) => {
   let term;
 
   /**
@@ -21,7 +22,7 @@ const Search = (dispatch) => {
     // routing...
     console.log('Searching...');
     dispatch(search(term));
-    this.props.history.push(`/search/${term}`);
+    dispatch(push(`/search/${term}`));
   };
 
   return (
