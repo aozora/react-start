@@ -1,9 +1,12 @@
-import { createStore /*, compose */} from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { applyMiddleware, compose, createStore } from 'redux';
+// import { syncHistoryWithStore } from 'react-router-redux';
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
+// import { BrowserRouter } from 'react-router-dom';
 
 // import the root reducer
-import rootReducer from './reducers/index';
+// import rootReducer from './reducers/index';
+import createRootReducer from './reducers';
 
 const defaultState = {
   search: {
@@ -11,10 +14,18 @@ const defaultState = {
   }
 };
 
-// create the store
-const store = createStore(rootReducer, defaultState);
+export const history = createBrowserHistory();
 
-export const history  = syncHistoryWithStore(BrowserRouter, store);
+const store = createStore(
+  createRootReducer(history), // root reducer with router state
+  defaultState,
+  compose(
+    applyMiddleware(
+      routerMiddleware(history) // for dispatching history actions
+      // ... other middlewares ...
+    )
+  )
+);
 
 export default store;
 
