@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './sass/app.scss';
 import Router from './router';
 
 class App extends Component {

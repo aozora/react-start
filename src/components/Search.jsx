@@ -1,39 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux'
+import { search } from '../actions';
 
-class Search extends Component {
+const Search = (dispatch) => {
+  let term;
 
   /**
    * Search submit event handler
    */
-  onSearchSubmit = (event) => {
+  const onSearchSubmit = (event) => {
     event.preventDefault();
 
-    const term = this.term.value;
     console.log(`term: ${term}`);
 
     // if the term is empty exit and do nothing
-    if (term === ''){
+    if (term === '') {
       return;
     }
 
     // routing...
     console.log('Searching...');
+    dispatch(search(term));
     this.props.history.push(`/search/${term}`);
   };
 
-  render() {
-    return (
-      <section className="search">
-        <form role="search" onSubmit={this.onSearchSubmit}>
-          <label htmlFor="search__term">Look for</label>
-          <input id="search__term" type="text"
-                 ref={(value) => this.term = value}
-                 required/>
-          <button type="submit" className="button">Search</button>
-        </form>
-      </section>
-    );
-  }
+  return (
+    <section className="search">
+      <form role="search" onSubmit={onSearchSubmit}>
+        <label htmlFor="search__term">Look for</label>
+        <input id="search__term" type="text"
+               ref={(value) => term = value}
+               required/>
+        <button type="submit" className="button">Search</button>
+      </form>
+    </section>
+  );
 }
 
-export default Search;
+export default connect()(Search)

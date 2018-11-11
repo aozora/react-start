@@ -16,6 +16,7 @@ const defaultState = {
 
 export const history = createBrowserHistory();
 
+/* eslint-disable no-underscore-dangle */
 const store = createStore(
   createRootReducer(history), // root reducer with router state
   defaultState,
@@ -23,7 +24,8 @@ const store = createStore(
     applyMiddleware(
       routerMiddleware(history) // for dispatching history actions
       // ... other middlewares ...
-    )
+    ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
