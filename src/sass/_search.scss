@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  label,
+  input {
+    margin-right: 1rem;
+  }
+
+  label {
+    color: $color-white;
+  }
+
+  input {
+    height: 2rem;
+    border: 1px solid $color-primary;
+    background-color: $color-white;
+    padding: 0 1rem;
+    color: $color-primary;
+    font-size: 1rem;
+    line-height: $baseline;
+  }
+
+}
