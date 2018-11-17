@@ -4,11 +4,8 @@ import XhrAdapter from '@pollyjs/adapter-xhr';
 import FetchAdapter from '@pollyjs/adapter-fetch';
 import LocalStoragepersister from '@pollyjs/persister-local-storage';
 
-// import footerMocks from './footer-mock';
-// import quickSearchMocks from './quick-search-mock';
-// import addToCartMocks from './add-to-cart-mock';
-// import addSizeMocks from './add-size-mock';
-// import viewMore from './view-more';
+import searchMock from './search-mock';
+
 
 /*
 Register the adapters and persisters we want to use. This way all future
@@ -33,10 +30,6 @@ const polly = new Polly('react-start', {
 // eslint-disable-next-line no-unused-vars
 const { server } = polly;
 
-// footerMocks.init(server);
-// quickSearchMocks.init(server);
-// addToCartMocks.init(server);
-// addSizeMocks.init(server);
-// viewMore.init(server);
+searchMock.init(server);
 
 export default polly;
